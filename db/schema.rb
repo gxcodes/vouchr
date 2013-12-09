@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20131209070124) do
 
   create_table "coupons", force: true do |t|
     t.string   "code"
-    t.integer  "usage"
+    t.decimal  "balance"
     t.integer  "nominal"
     t.datetime "created_at"
     t.datetime "updated_at"

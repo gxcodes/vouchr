@@ -2,7 +2,7 @@ class CreateCoupons < ActiveRecord::Migration
   def change
     create_table :coupons do |t|
       t.string :code
-      t.integer :usage
+      t.decimal :balance
       t.integer :nominal
       t.timestamps
     end

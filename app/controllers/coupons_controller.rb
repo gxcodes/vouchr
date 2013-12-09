@@ -1,6 +1,6 @@
 class CouponsController < ApplicationController
   before_action :set_coupon, only: [:show, :edit, :update, :destroy]
-  before_action :get_voucher, only: [:new]
+  before_action :get_voucher, only: [:new, :edit]
   # GET /coupons
   # GET /coupons.json
   def index
@@ -26,7 +26,7 @@ class CouponsController < ApplicationController
   def create
     respond_to do |format|
       params[:quantity].to_i.times do   
-      @coupon = Coupon.new(coupon_params)  
+        @coupon = Coupon.new(coupon_params)  
         if @coupon.save
 
         else
@@ -70,7 +70,7 @@ class CouponsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coupon_params
-      params.require(:coupon).permit(:nominal, :usage)
+      params.require(:coupon).permit(:nominal, :balance, :code)
     end
 
     def get_voucher
