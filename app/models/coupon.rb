@@ -1,3 +1,6 @@
 class Coupon < ActiveRecord::Base
-  has_many :vouchers
+  after_initialize :init
+  def init
+      self.usage  ||= 0
+    end
 end

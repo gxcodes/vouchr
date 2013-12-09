@@ -11,18 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :code %><br>
     <%= f.text_field :code %>
   </div>
-
+ -->
   <div class="field">
-    <%= select("voucher", "id", @vouchers.collect {|p| [ p.nominal, p.id ] }) %>
+    <%= select("coupon", "nominal", @vouchers.collect {|p| [ p.nominal, p.nominal ] }) %>
   </div>
 
   <div class="field">
-    <%= f.label :usage %><br>
-    <%= f.number_field :usage %>
+    <%= label_tag :quantity %><br>
+    <%= number_field_tag :quantity %>
   </div>
   <div class="actions">
     <%= f.submit %>

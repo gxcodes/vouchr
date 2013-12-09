@@ -24,16 +24,17 @@ class CouponsController < ApplicationController
   # POST /coupons
   # POST /coupons.json
   def create
-    @coupon = Coupon.new(coupon_params)
-
     respond_to do |format|
-      if @coupon.save
-        format.html { redirect_to @coupon, notice: 'Coupon was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @coupon }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @coupon.errors, status: :unprocessable_entity }
+      params[:quantity].to_i.times do   
+      @coupon = Coupon.new(coupon_params)  
+        if @coupon.save
+
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @coupon.errors, status: :unprocessable_entity }
+        end
       end
+    format.html { redirect_to @coupon, notice: 'Coupon was successfully created.' }
     end
   end
 
@@ -69,7 +70,7 @@ class CouponsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coupon_params
-      params.require(:coupon).permit(:code, :voucher_id, :usage)
+      params.require(:coupon).permit(:nominal, :usage)
     end
 
     def get_voucher
