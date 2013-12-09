@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209063423) do
+ActiveRecord::Schema.define(version: 20131209070124) do
+
+  create_table "coupons", force: true do |t|
+    t.string   "code"
+    t.integer  "voucher_id"
+    t.integer  "usage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "vouchers", force: true do |t|
     t.integer  "nominal"
