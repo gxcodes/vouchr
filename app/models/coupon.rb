@@ -10,4 +10,5 @@ class Coupon < ActiveRecord::Base
     code =  (('A'..'Z').to_a + (0..9).to_a).shuffle[0,8].join
     self.code = code.insert(4,'-')
   end
+
 end

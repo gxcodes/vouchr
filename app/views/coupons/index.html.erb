@@ -1,8 +1,9 @@
 <h1>Listing coupons</h1>
-
+<p id="notice"><%= notice %></p>
 <table>
   <thead>
     <tr>
+      <th>No</th>
       <th>Code</th>
       <th>Nominal</th>
       <th>Balance</th>
@@ -13,8 +14,10 @@
   </thead>
 
   <tbody>
+    <% number = 0 %>
     <% @coupons.each do |coupon| %>
       <tr>
+        <td><%=number += 1 %></td>
         <td><%= coupon.code %></td>
         <td><%= coupon.nominal %></td>
         <td><%= coupon.balance %></td>
