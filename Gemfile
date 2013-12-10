@@ -34,6 +34,7 @@ end
 
 # Use Zurb's Foundation
 gem 'foundation-rails'
+gem 'luhn'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

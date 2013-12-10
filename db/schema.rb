@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209070124) do
+ActiveRecord::Schema.define(version: 20131210025452) do
 
   create_table "coupons", force: true do |t|
     t.string   "code"
     t.decimal  "balance"
     t.integer  "nominal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "histories", force: true do |t|
+    t.integer  "phone_number"
+    t.string   "coupon_code"
+    t.integer  "nominal_usage"
+    t.string   "date"
+    t.string   "voucher_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "homes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

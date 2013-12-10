@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone_number: 1
+  coupon_code: MyString
+  nominal_usage: 1
+  date: MyString
+  voucher_code: MyString
+
+two:
+  phone_number: 1
+  coupon_code: MyString
+  nominal_usage: 1
+  date: MyString
+  voucher_code: MyString
