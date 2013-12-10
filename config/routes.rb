@@ -1,6 +1,9 @@
 Vouchr::Application.routes.draw do
   get "home/index"
   post "home/new"
+  get "home/show"
+  get "home/generate_luhn"
+  
   resources :histories
 
   resources :coupons
