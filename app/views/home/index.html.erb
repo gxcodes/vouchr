@@ -1,7 +1,8 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"></p>
 <h1>Home#index</h1>
-  <%= form_tag('new') %>
+  <%= form_tag('new', remote: true) %>
       <label>Masukan Nomer Telepon : </label>
       <%=telephone_field_tag 'phone_number' %>
       <%=submit_tag "Input Phone Number", data: { disable_with: "Please wait..." } %>
   </form>
+  <div id="select"></div>
