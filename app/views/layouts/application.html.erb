@@ -15,6 +15,13 @@
     <div class="row">
       <div class="large-12 columns">
 
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+
         <%= yield %>
         <%= javascript_include_tag "application" %>
         

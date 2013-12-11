@@ -1,11 +1,17 @@
 Vouchr::Application.routes.draw do
   root 'phone_numbers#index'
-  # resources :home do
-  #   member do
-  #     get 'generate_luhn'
-  #   end
+
+  
+  devise_for :users , :skip => [:sessions]
+  as :user do
+    get 'rahasia' => 'devise/sessions#new', :as => :new_user_session
+    post 'rahasia' => 'devise/sessions#create', :as => :user_session
+  end
+
+  # devise_scope :users do
+  #   get "/rahasia" => "devise/sessions#new"
   # end
-  # resources :phone_numbers
+ 
 
   namespace :rahasia do
     resources :histories, :coupons, :vouchers

@@ -28,7 +28,7 @@ class Rahasia::VouchersController < ApplicationController
 
     respond_to do |format|
       if @voucher.save
-        format.html { redirect_to rahasia_vouchers_url(@voucher), notice: 'Voucher was successfully created.' }
+        format.html { redirect_to rahasia_voucher_path(@voucher), notice: 'Voucher was successfully created.' }
         format.json { render action: 'show', status: :created, location: @voucher }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class Rahasia::VouchersController < ApplicationController
   def update
     respond_to do |format|
       if @voucher.update(voucher_params)
-        format.html { redirect_to rahasia_vouchers_url(@voucher), notice: 'Voucher was successfully updated.' }
+        format.html { redirect_to rahasia_voucher_path(@voucher), notice: 'Voucher was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

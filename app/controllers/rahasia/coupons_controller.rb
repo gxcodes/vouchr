@@ -35,7 +35,7 @@ class Rahasia::CouponsController < ApplicationController
           format.json { render json: @coupon.errors, status: :unprocessable_entity }
         end
       end
-    format.html { redirect_to '/rahasia/coupons', notice: "#{params[:quantity]} Coupon was successfully created." }
+    format.html { redirect_to rahasia_coupon_path(@coupon), notice: "#{params[:quantity]} Coupon was successfully created." }
     end
   end
 
@@ -44,7 +44,7 @@ class Rahasia::CouponsController < ApplicationController
   def update
     respond_to do |format|
       if @coupon.update(coupon_params)
-        format.html { redirect_to rahasia_coupons_url(@coupon), notice: 'Coupon was successfully updated.' }
+        format.html { redirect_to rahasia_coupon_path(@coupon), notice: 'Coupon was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
