@@ -1,14 +1,16 @@
 Vouchr::Application.routes.draw do
+  root 'home#index'
+
+  scope '/rahasia' do
+    resources :histories, :coupons, :vouchers
+  end
+
   get "home/index"
   post "home/new"
   get "home/show"
   get "home/generate_luhn"
   
-  resources :histories
 
-  resources :coupons
-
-  resources :vouchers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

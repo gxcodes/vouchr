@@ -35,7 +35,7 @@ class CouponsController < ApplicationController
           format.json { render json: @coupon.errors, status: :unprocessable_entity }
         end
       end
-    format.html { redirect_to '/coupons', notice: "#{params[:quantity]} Coupon was successfully created." }
+    format.html { redirect_to '/rahasia/coupons', notice: "#{params[:quantity]} Coupon was successfully created." }
     end
   end
 
