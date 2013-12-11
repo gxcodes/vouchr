@@ -1,0 +1,7 @@
+<% if @phone_number.valid? %>
+  $('#notice').html('<%= escape_javascript render('notice', notice: "Nomer Telepon terdaftar") %>');
+  $('#select').html('<%= escape_javascript render('show', command: "Pilih Nominal Voucher") %>');
+<% else %>
+  $('#notice').html('<%= escape_javascript render('notice', notice: "Nomer Telepon tidak terdaftar") %>');
+  $('#select').html('');
+<% end %>
