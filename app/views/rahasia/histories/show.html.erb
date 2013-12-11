@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @history.phone_number %>
+</p>
+
+<p>
+  <strong>Coupon code:</strong>
+  <%= @history.coupon_code %>
+</p>
+
+<p>
+  <strong>Nominal usage:</strong>
+  <%= @history.nominal_usage %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @history.date %>
+</p>
+
+<p>
+  <strong>Voucher code:</strong>
+  <%= @history.voucher_code %>
+</p>
+
+<%= link_to 'Edit', edit_history_path(@history) %> |
+<%= link_to 'Back', histories_path %>

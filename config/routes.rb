@@ -1,5 +1,5 @@
 Vouchr::Application.routes.draw do
-  root 'phone_number#index'
+  root 'phone_numbers#index'
   # resources :home do
   #   member do
   #     get 'generate_luhn'
@@ -7,12 +7,12 @@ Vouchr::Application.routes.draw do
   # end
   # resources :phone_numbers
 
-  scope '/rahasia' do
+  namespace :rahasia do
     resources :histories, :coupons, :vouchers
   end
 
   get "phone_numbers/index"
-  post "phone_numbers/new"
+  post"phone_numbers/new"
   get "phone_numbers/show"
   get "phone_numbers/generate_luhn"
   

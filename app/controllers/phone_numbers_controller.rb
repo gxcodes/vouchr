@@ -7,10 +7,10 @@ class PhoneNumbersController < ApplicationController
     @phone_number = PhoneNumber.new params[:phone_number]
     respond_to do |format|
       if @phone_number.valid?
-        format.html { redirect_to home_index_path }
+        format.html { redirect_to phone_number_index_path }
         format.js
       else
-        format.html { redirect_to home_index_path }
+        format.html { redirect_to phone_number_index_path }
         format.js
       end
     end
