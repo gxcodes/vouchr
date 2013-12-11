@@ -6,12 +6,12 @@ class PhoneNumber
     @phone_number = phone_number
   end
 
-  def luhn_valid?
-    Luhn.valid? phone_number.slice!(0..3)
-  end
-
   def telkomsel? 
     phone_number =~ /^(0812|0813)/
+  end
+
+  def luhn_valid?
+    Luhn.valid? phone_number.slice!(0..3)
   end
 
   def length_valid?

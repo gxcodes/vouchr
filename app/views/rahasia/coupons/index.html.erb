@@ -7,9 +7,7 @@
       <th>Code</th>
       <th>Nominal</th>
       <th>Balance</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -19,11 +17,9 @@
       <tr>
         <td><%=number += 1 %></td>
         <td><%= coupon.code %></td>
-        <td><%= coupon.nominal %></td>
-        <td><%= coupon.balance %></td>
-        <td><%= link_to 'Show', rahasia_coupon_path(coupon) %></td>
-        <td><%= link_to 'Edit', edit_rahasia_coupon_path(coupon) %></td>
-        <td><%= link_to 'Destroy', rahasia_coupon_path(coupon), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= number_to_currency(coupon.nominal, :unit => "Rp ") %></td>
+        <td><%= number_to_currency(coupon.balance, :unit => "Rp ") %></td>
+        <td><%= link_to 'Show', rahasia_coupon_path(coupon) %> | <%= link_to 'Edit', edit_rahasia_coupon_path(coupon) %> | <%= link_to 'Destroy', rahasia_coupon_path(coupon), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

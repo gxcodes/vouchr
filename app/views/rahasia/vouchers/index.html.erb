@@ -4,19 +4,15 @@
   <thead>
     <tr>
       <th>Nominal</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @vouchers.each do |voucher| %>
       <tr>
-        <td><%= voucher.nominal %></td>
-        <td><%= link_to 'Show', rahasia_voucher_path(voucher)%></td>
-        <td><%= link_to 'Edit', edit_rahasia_voucher_path(voucher) %></td>
-        <td><%= link_to 'Destroy', rahasia_voucher_path(voucher), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= number_to_currency(voucher.nominal, :unit => "Rp ") %></td>
+        <td><%= link_to 'Show', rahasia_voucher_path(voucher)%> | <%= link_to 'Edit', edit_rahasia_voucher_path(voucher) %> | <%= link_to 'Destroy', rahasia_voucher_path(voucher), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
