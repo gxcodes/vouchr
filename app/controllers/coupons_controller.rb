@@ -24,12 +24,12 @@ class CouponsController < ApplicationController
   # POST /coupons
   # POST /coupons.json
   def create
-    bank = []
+    # bank = []
     respond_to do |format|
       params[:quantity].to_i.times do   
         @coupon = Coupon.new(coupon_params)  
         if @coupon.save
-          bank << @coupon
+          # bank << @coupon
         else
           format.html { render action: 'new' }
           format.json { render json: @coupon.errors, status: :unprocessable_entity }

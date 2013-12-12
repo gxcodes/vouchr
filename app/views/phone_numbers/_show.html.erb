@@ -2,5 +2,8 @@
 <h1>Pilih vouchers</h1>
 <%= command %>
 <div class="field">
-  <%= select("coupon", "nominal", vouchers.collect {|p| [ p.nominal, p.nominal ] }) %>
+  <%= select("coupon", "nominal", vouchers.collect {|p| [ p.nominal, p.nominal ]}) %>
+  <%= label_tag("code_input","code_coupon") %>
+  <%= text_field_tag("cupon_code") %>
+  <%= submit_tag "Submit" %>
 </div>
