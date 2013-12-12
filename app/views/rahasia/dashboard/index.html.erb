@@ -1,6 +1,31 @@
-<ul>
-<li><%= link_to 'Vouchers', rahasia_vouchers_path %></li>
-<li><%= link_to 'Coupons', rahasia_coupons_path %></li></ul>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Vouchr App</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active">Welcome Admin</li>
+      <li class="has-dropdown">
+        <a href="#">Admin</a>
+        <ul class="dropdown">
+          <li><a href="#">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><%= link_to 'Vouchers', rahasia_vouchers_path %></li>
+      <li><%= link_to 'Coupons', rahasia_coupons_path %></li>
+    </ul>
+  </section>
+</nav>
+
 <h1>Rahasia::Dashboard#index</h1>
 <p>Find me in app/views/rahasia/dashboard/index.html.erb</p>
 
