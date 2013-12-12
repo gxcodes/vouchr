@@ -47,8 +47,9 @@ ActiveRecord::Schema.define(version: 20131211100911) do
     t.string   "username"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
   create_table "vouchers", force: true do |t|
     t.integer  "nominal"
