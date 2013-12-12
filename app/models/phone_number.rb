@@ -1,4 +1,5 @@
 class PhoneNumber 
+  require "luhn"
 
   attr_reader :phone_number
 
@@ -11,7 +12,7 @@ class PhoneNumber
   end
 
   def luhn_valid?
-    Luhn.valid? phone_number.slice!(0..3)
+    Luhn.valid? phone_number, 10
   end
 
   def length_valid?

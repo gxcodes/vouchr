@@ -1,4 +1,5 @@
 class PhoneNumbersController < ApplicationController
+  require 'luhn'
 
   def index
   end
@@ -22,6 +23,6 @@ class PhoneNumbersController < ApplicationController
   end
 
   def generate_luhn
-    @luhn = Luhn.generate 6
+    @luhn = Luhn.generate 10, prefix: '0812', mod: 10
   end
 end

@@ -2,6 +2,6 @@
   $('#notice').html('<%= escape_javascript render('notice', notice: "Nomer Telepon terdaftar") %>');
   $('#select').html('<%= escape_javascript render('show', command: "Pilih Nominal Voucher") %>');
 <% else %>
-  $('#notice').html('<%= escape_javascript render('notice', notice: "Nomer Telepon tidak terdaftar") %>');
+  $('#notice').html('<%= escape_javascript render('notice', notice: "Nomer Telepon tidak terdaftar atau salah") %>');
   $('#select').html('');
 <% end %>
