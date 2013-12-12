@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211100911) do
+ActiveRecord::Schema.define(version: 20131212104000) do
 
   create_table "coupons", force: true do |t|
     t.string   "code"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20131211100911) do
     t.string   "coupon_code"
     t.integer  "nominal_usage"
     t.string   "date"
-    t.string   "voucher_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
