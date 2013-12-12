@@ -25,4 +25,14 @@ class PhoneNumbersController < ApplicationController
   def generate_luhn
     @luhn = Luhn.generate 10, prefix: '0812', mod: 10
   end
+
+  def coupon_validate
+    respond_to do |format|
+      if @coupon = Coupon.where('code = ? and balance >= ?',params[:coupon_code].gsub(/\s/, ''), params[:coupon][:nominal])
+        format.js
+      else
+        format.js
+      end
+    end
+  end
 end

@@ -1,6 +1,6 @@
 <p>
   <strong>Code:</strong>
-  <%= @coupon.code %>
+  <%= @coupon.code.gsub(/(.{4})(?=.)/, '\1 \2') %>
 </p>
 
 <p>

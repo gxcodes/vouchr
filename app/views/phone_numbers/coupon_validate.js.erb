@@ -1,0 +1,5 @@
+<% if @coupon %>
+  $('#notification').html('<%= escape_javascript render('notification_coupon', notification: "Coupon Anda Benar") %>');
+<% else %>
+  $('#notification').html('<%= escape_javascript render('notification_coupon', notification: "Coupon Anda Tidak Benar") %>');
+<% end %>

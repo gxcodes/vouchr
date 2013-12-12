@@ -10,8 +10,7 @@ class Coupon < ActiveRecord::Base
   end
 
   def generate_code
-    code = Luhn.generate 16, mod: (self.nominal/5000)
-    self.code = code.gsub(/(.{4})(?=.)/, '\1 \2')
+    self.code = Luhn.generate 16, mod: (self.nominal/5000)
   end
 
 end
