@@ -6,7 +6,8 @@ Vouchr::Application.routes.draw do
   namespace :rahasia do
     # root "dashboard#index"
 
-    resources :histories, :coupons, :vouchers, :dashboard
+    resources :coupons, :vouchers, :dashboard
+    resources :histories, only: [:index]
   end
 
   get  "phone_numbers/index"
