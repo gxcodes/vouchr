@@ -2,6 +2,7 @@
 <%= command %>
 <div class="field">
   <%= form_tag(phone_numbers_coupon_validate_path, remote: true) %>
+  <%= hidden_field_tag 'phone_number', "#{@phone_number}" %>
   <%= text_field_tag("coupon_code") %>
   <%= label_tag("voucher","Pilih Nominal Voucher") %>
   <%= select("coupon", "nominal", vouchers.collect {|p| [ p.nominal, p.nominal ]}) %>

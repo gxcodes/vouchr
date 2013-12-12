@@ -7,7 +7,7 @@ Vouchr::Application.routes.draw do
     # root "dashboard#index"
 
     resources :coupons, :vouchers, :dashboard
-    resources :histories, only: [:index]
+    resources :histories, only: [:index, :show]
   end
 
   get  "phone_numbers/index"

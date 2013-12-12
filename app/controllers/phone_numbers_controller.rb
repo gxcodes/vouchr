@@ -29,7 +29,8 @@ class PhoneNumbersController < ApplicationController
   def coupon_validate
     respond_to do |format|
       if @coupon = Coupon.where('code = ? and balance >= ?',params[:coupon_code].gsub(/\s/, ''), params[:coupon][:nominal]).first
-        
+         @history = History.new phone_number: params[:phone_number], coupon_code: params[:coupon_code].gsub(/\s/, ''), nominal_usage: params[:coupon][:nominal], date: Time.now
+         @history.save
         format.js
       else
         format.js
