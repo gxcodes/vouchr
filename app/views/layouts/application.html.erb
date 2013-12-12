@@ -15,28 +15,19 @@
     <div class="row">
       <div class="large-12 columns">
 
-      <% if notice %>
-        <div data-alert class="alert-box success radius">
-          <%= notice %><a href="#" class="close">&times;</a>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div data-alert class="alert-box success radius">
-          <%= alert %><a href="#" class="close">&times;</a>
-        </div>
-      <% end %>
+        <%= render 'shared/notice' %>
 
-      <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <% end %>
 
-      <%= yield %>
-      <%= javascript_include_tag "application" %>
+        <%= yield %>
+        <%= javascript_include_tag "application" %>
         
       </div>
     </div>

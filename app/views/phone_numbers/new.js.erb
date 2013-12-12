@@ -1,7 +1,7 @@
 <% if @phone_number.valid? %>
-  // $('#notice').html('<%= escape_javascript render('notice', notice: "Nomer Telepon terdaftar") %>');
   $('#select').html('<%= escape_javascript render('show', command: "Masukan Kode Coupon") %>');
 <% else %>
-  $('#notice').html('<%= escape_javascript render('notice', notice: "Nomer Telepon tidak terdaftar atau salah") %>');
+  $('#notice').remove();
+  $('.large-12.columns').prepend('<%= escape_javascript render('shared/notice', alert: "Nomer Telepon tidak terdaftar atau salah") %>');
   $('#select').html('');
 <% end %>
