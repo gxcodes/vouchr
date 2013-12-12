@@ -1,0 +1,2 @@
+module Rahasia::DashboardHelper
+end
