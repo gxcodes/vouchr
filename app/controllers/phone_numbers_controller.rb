@@ -28,7 +28,7 @@ class PhoneNumbersController < ApplicationController
 
   def coupon_validate
     respond_to do |format|
-      if @coupon = Coupon.where('code = ? and balance >= ?',params[:coupon_code].gsub(/\s/, ''), params[:coupon][:nominal])
+      if @coupon = Coupon.where('code = ? and balance >= ?',params[:coupon_code].gsub(/\s/, ''), params[:coupon][:nominal]).first
         format.js
       else
         format.js

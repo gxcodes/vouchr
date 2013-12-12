@@ -1,9 +1,9 @@
 <% vouchers = Voucher.all %>
 <%= command %>
 <div class="field">
-  <%= form_tag('coupon_validate', remote: true) %>
+  <%= form_tag(phone_numbers_coupon_validate_path, remote: true) %>
   <%= text_field_tag("coupon_code") %>
-  <%= label_tag("coupon_code","Coupon Code") %>
+  <%= label_tag("voucher","Pilih Nominal Voucher") %>
   <%= select("coupon", "nominal", vouchers.collect {|p| [ p.nominal, p.nominal ]}) %>
   <%= submit_tag "Submit" %>
 </div>
