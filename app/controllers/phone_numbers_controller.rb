@@ -23,9 +23,13 @@ class PhoneNumbersController < ApplicationController
     render "_show"
   end
 
-  def generate_luhn
-    prefix = ['0812', '0813']
-    @luhn = Luhn.generate 10, prefix: prefix.sample, mod: 10
+  def seeds
+    @luhn = []     
+    20.times do
+       prefix = ['0812', '0813']
+      @luhn << Luhn.generate(10, prefix: prefix.sample, mod: 10)
+    end
+    @luhn
   end
 
   def coupon_validate

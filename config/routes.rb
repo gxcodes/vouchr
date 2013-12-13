@@ -14,7 +14,7 @@ Vouchr::Application.routes.draw do
   get  "phone_numbers/index"
   post "phone_numbers/new"
   get  "phone_numbers/show"
-  get  "phone_numbers/generate_luhn"
+  get  "phone_numbers/seeds"
   post "phone_numbers/coupon_validate"
   
 end
