@@ -14,8 +14,8 @@
   <tbody>
     <% @histories.each do |history| %>
       <tr>
-        <td><%= history.phone_number %></td>
-        <td><%= history.coupon_code %></td>
+        <td><%= history.phone_number.insert(4, '-')  %></td>
+        <td><%= history.coupon_code.gsub(/(.{4})(?=.)/, '\1 \2')%></td>
         <td><%= history.nominal_usage %></td>
         <td><%= history.date %></td>
         <td><%= link_to 'Show', rahasia_history_path(history) %></td>

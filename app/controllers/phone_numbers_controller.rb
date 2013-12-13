@@ -24,14 +24,19 @@ class PhoneNumbersController < ApplicationController
   end
 
   def generate_luhn
-    @luhn = Luhn.generate 10, prefix: '0812', mod: 10
+    prefix = ['0812', '0813']
+    @luhn = Luhn.generate 10, prefix: prefix.sample, mod: 10
   end
 
   def coupon_validate
     respond_to do |format|
       if @coupon = Coupon.where('code = ? and balance >= ?', @coupon_code , params[:coupon][:nominal]).first
          @coupon.balance -= params[:coupon][:nominal].to_i
-         @coupon.save
+         if @coupon.balance == 0
+           @coupon.destroy
+         else
+           @coupon.save
+         end
          @history = History.new phone_number: params[:phone_number], coupon_code: @coupon_code, nominal_usage: params[:coupon][:nominal], date: Time.now
          @history.save
         format.js

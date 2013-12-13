@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131212104000) do
   end
 
   create_table "histories", force: true do |t|
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.string   "coupon_code"
     t.integer  "nominal_usage"
     t.string   "date"
