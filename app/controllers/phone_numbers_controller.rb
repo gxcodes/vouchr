@@ -1,5 +1,6 @@
 class PhoneNumbersController < ApplicationController
   require 'luhn'
+  before_action :change_coupon, only: [:coupon_validate]
 
   def index
   end
@@ -28,8 +29,10 @@ class PhoneNumbersController < ApplicationController
 
   def coupon_validate
     respond_to do |format|
-      if @coupon = Coupon.where('code = ? and balance >= ?',params[:coupon_code].gsub(/\s/, ''), params[:coupon][:nominal]).first
-         @history = History.new phone_number: params[:phone_number], coupon_code: params[:coupon_code].gsub(/\s/, ''), nominal_usage: params[:coupon][:nominal], date: Time.now
+      if @coupon = Coupon.where('code = ? and balance >= ?', @coupon_code , params[:coupon][:nominal]).first
+         @coupon.balance -= params[:coupon][:nominal].to_i
+         @coupon.save
+         @history = History.new phone_number: params[:phone_number], coupon_code: @coupon_code, nominal_usage: params[:coupon][:nominal], date: Time.now
          @history.save
         format.js
       else
@@ -37,4 +40,10 @@ class PhoneNumbersController < ApplicationController
       end
     end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def change_coupon
+      @coupon_code = PhoneNumber.change_coupon_code params[:coupon_code]
+    end
 end

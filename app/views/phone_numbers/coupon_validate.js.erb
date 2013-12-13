@@ -1,5 +1,7 @@
 <% if @coupon %>
-  $('#notification').html('<%= escape_javascript render('notification_coupon', notification: "Coupon Anda Benar") %>');
+  $('#notification').html('<%= escape_javascript render('notification_coupon', notification: "Transaksi Berhasil") %>');
+  $('#coupon_code').val('');
 <% else %>
   $('#notification').html('<%= escape_javascript render('notification_coupon', notification: "Coupon Anda Tidak Benar Atau Balance Tidak Mencukupi") %>');
+  $('#coupon_code').val('');
 <% end %>

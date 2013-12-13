@@ -23,5 +23,8 @@ class PhoneNumber
     telkomsel? && length_valid? && luhn_valid?
   end
 
+  def self.change_coupon_code coupon_code
+    coupon_code.gsub(/\s/, '')
+  end
 end
 
