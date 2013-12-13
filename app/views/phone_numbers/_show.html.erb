@@ -6,6 +6,6 @@
   <%= text_field_tag("coupon_code") %>
   <%= label_tag("voucher","Pilih Nominal Voucher") %>
   <%= select("coupon", "nominal", vouchers.collect {|p| [ p.nominal, p.nominal ]}) %>
-  <%= submit_tag "Submit" %>
+  <%= submit_tag "Submit", class: "button small" %>
 </div>
 <div id="notification"></div>
