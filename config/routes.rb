@@ -1,4 +1,5 @@
 Vouchr::Application.routes.draw do
+  get "howtouse/index"
   root 'phone_numbers#index'
 
   devise_for :users, path: '', path_names: { sign_in: '/rahasia', sign_up: '/rahasia/sign_up'}

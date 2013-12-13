@@ -1,7 +1,14 @@
-<h1>Home</h1>
-<%= form_tag(phone_numbers_new_path, remote: true) %>
-    <label>Masukan Nomer Telepon : </label>
-    <%= telephone_field_tag 'phone_number' %>
-    <%= submit_tag "Input Phone Number", data: { disable_with: "Please wait..." } %>
-</form>
-<div id="select"></div>
+<div class="row">
+  <div class="small-6 small-centered columns">
+
+  <div class="panel callout">
+      <h1>Vouchr App</h1>
+      <%= form_tag(phone_numbers_new_path, remote: true) %>
+          <label>Masukan Nomer Telepon : </label>
+          <%= telephone_field_tag 'phone_number' %>
+          <%= submit_tag "Input Phone Number", data: { disable_with: "Please wait..." }, class: "button small" %>
+      </form>
+      <div id="select"></div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
   <% @phone_number = @phone_number.phone_number %>
   $('#select').html('<%= escape_javascript render('show', command: "Masukan Kode Coupon") %>');
 <% else %>
-  $('#notice').remove();
+  $('#notice_id').remove();
   $('.large-12.columns').prepend('<%= escape_javascript render('shared/notice', alert: "Nomer Telepon tidak terdaftar atau salah") %>');
   $('#select').html('');
 <% end %>

@@ -7,7 +7,7 @@
       <th>Coupon code</th>
       <th>Nominal usage</th>
       <th>Date</th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -19,8 +19,8 @@
         <td><%= history.nominal_usage %></td>
         <td><%= history.date %></td>
         <td><%= link_to 'Show', rahasia_history_path(history) %></td>
-        <td><%#= link_to 'Edit', edit_rahasia_history_path(history) %></td>
-        <td><%#= link_to 'Destroy', rahasia_history_path(history) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%#= link_to 'Edit', edit_rahasia_history_path(history) %></td>
+        <td><%#= link_to 'Destroy', rahasia_history_path(history) , method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
