@@ -26,5 +26,13 @@ class PhoneNumber
   def self.change_coupon_code coupon_code
     coupon_code.gsub(/\s/, '')
   end
+
+  def self.check_coupon_code coupon_code
+    History.find_by coupon_code: coupon_code
+  end
+
+  def self.check_phone? phone_number
+    @check_phone.phone_number == phone_number
+  end
 end
 
